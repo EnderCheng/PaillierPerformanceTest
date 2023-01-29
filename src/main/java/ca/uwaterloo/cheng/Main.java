@@ -1,4 +1,6 @@
-package ca.uwaterloo.cheng;public class Main {
+package ca.uwaterloo.cheng;
+
+public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }

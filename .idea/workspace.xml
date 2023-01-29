@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd4c4d99-f4e3-444a-96ee-fa17d43753dd" name="Changes" comment="" />
+    <list default="true" id="fd4c4d99-f4e3-444a-96ee-fa17d43753dd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ca/uwaterloo/cheng/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca/uwaterloo/cheng/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ca/uwaterloo/cheng/PaillierExt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca/uwaterloo/cheng/PaillierExt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ca/uwaterloo/cheng/PaillierOpt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca/uwaterloo/cheng/PaillierOpt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ca/uwaterloo/cheng/SHE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca/uwaterloo/cheng/SymmetricHomomorphism.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +27,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2L0vNRfb0yyEa5Juv3EFnkf8SwX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -27,9 +39,64 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/cheng/IdeaProjects/PaillierPerformanceTest/src/main/java/ca/uwaterloo/cheng"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/ca/uwaterloo/cheng" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.PaillierOpt">
+    <configuration name="PaillierExt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.uwaterloo.cheng.PaillierExt" />
+      <module name="PaillierPerformanceTest.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.uwaterloo.cheng.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaillierOpt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.uwaterloo.cheng.PaillierOpt" />
+      <module name="PaillierPerformanceTest.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.uwaterloo.cheng.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SymmetricHomomorphism" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ca.uwaterloo.cheng.SymmetricHomomorphism" />
+      <module name="PaillierPerformanceTest.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.uwaterloo.cheng.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SymmetricHomomorphism" />
+        <item itemvalue="Application.PaillierOpt" />
+        <item itemvalue="Application.PaillierExt" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
