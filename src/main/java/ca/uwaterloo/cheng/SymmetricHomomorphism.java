@@ -81,12 +81,12 @@ public class SymmetricHomomorphism {
         return p;
     }
 
-    public BigInteger mul(BigInteger c1, BigInteger c2)
+    public BigInteger Mul(BigInteger c1, BigInteger c2)
     {
         return c1.multiply(c2).mod(N);
     }
 
-    public BigInteger add(BigInteger c1, BigInteger c2)
+    public BigInteger Add(BigInteger c1, BigInteger c2)
     {
         return c1.add(c2).mod(N);
     }
@@ -97,7 +97,7 @@ public class SymmetricHomomorphism {
 
         BigInteger tmp1 = (gamma.multiply(S)).add(plaintext);
         BigInteger tmp2 = (lambda.multiply(p)).add(BigInteger.ONE);
-        return (tmp1.multiply(tmp2)).mod(N);
+        return (tmp1.mod(N).multiply(tmp2.mod(N))).mod(N);
     }
 
     public BigInteger PkEncrypt(BigInteger plaintext)
@@ -132,7 +132,7 @@ public class SymmetricHomomorphism {
 
     public static void main(String[] args)
     {
-        int k0 = 400;
+        int k0 = 300;
         int k1 = 100;
         int k2 = 40;
         int level = 72;
@@ -141,16 +141,42 @@ public class SymmetricHomomorphism {
         SymmetricHomomorphism SHE = new SymmetricHomomorphism(k0, k1, k2, kappa);
         long start, end;
 
-        BigInteger m = BigInteger.valueOf(-300);
+        BigInteger m = BigInteger.valueOf(-100);
         start = System.nanoTime();
         BigInteger c = SHE.Encrypt(m);
         end = System.nanoTime();
         System.out.println("SHE Encryption:"+ (end-start)/1000000.0);
+
         start = System.nanoTime();
         BigInteger d = SHE.Decrypt(c);
         end = System.nanoTime();
         System.out.println("SHE Decryption:"+ (end-start)/1000000.0);
         System.out.println(d);
+
+//        start = System.nanoTime();
+//        c = SHE.PkEncrypt(m);
+//        end = System.nanoTime();
+//        System.out.println("SHE Pubkey Encryption:"+ (end-start)/1000000.0);
+
+        start = System.nanoTime();
+        d = SHE.Decrypt(c);
+        end = System.nanoTime();
+        System.out.println("SHE Decryption:"+ (end-start)/1000000.0);
+        System.out.println(d);
+
+        BigInteger m_2 = BigInteger.valueOf(5);
+        BigInteger c_1 = m_2.add(c);
+        System.out.println(SHE.Decrypt(c_1));
+
+        BigInteger c_2 = m_2.multiply(c);
+        System.out.println(SHE.Decrypt(c_2));
+
+        BigInteger c_3 = c_2.add(c);
+        System.out.println(SHE.Decrypt(c_3));
+
+        BigInteger c_4= c_2.multiply(c_3);
+        System.out.println(SHE.Decrypt(c_4));
+
     }
 
 }

@@ -1,7 +1,15 @@
 package ca.uwaterloo.cheng;
 
+import org.openjdk.jmh.annotations.*;
+import org.openjdk.jmh.runner.Runner;
+import org.openjdk.jmh.runner.RunnerException;
+import org.openjdk.jmh.runner.options.Options;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
+
 import java.math.BigInteger;
 import java.security.SecureRandom;
+import java.util.concurrent.TimeUnit;
+
 
 public class PaillierOpt {
     private BigInteger P,Q, p, q, p_pri, q_pri, tau, xi, two_tau, two_tau_inv;
@@ -49,7 +57,6 @@ public class PaillierOpt {
         g = randomN().modPow(xi.multiply(BigInteger.TWO), N).negate().mod(N);
         two_tau = tau.multiply(BigInteger.TWO);
         two_tau_inv = two_tau.modInverse(N);
-        System.out.println("Key Generation Completion.");
     }
 
     public BigInteger randomN()
@@ -59,6 +66,21 @@ public class PaillierOpt {
             r = new BigInteger(k,rnd);
         }while (! (r.compareTo(N) == -1));
         return r;
+    }
+
+    public BigInteger PlainAdd(BigInteger m, BigInteger c)
+    {
+        return (BigInteger.ONE.add(m.multiply(N))).multiply(c).mod(N_square);
+    }
+
+    public BigInteger CipherAdd(BigInteger c_1, BigInteger c_2)
+    {
+        return c_1.multiply(c_2).mod(N_square);
+    }
+
+    public BigInteger PlainMul(BigInteger m, BigInteger c)
+    {
+        return c.modPow(m,N_square);
     }
 
     public BigInteger Encrypt(BigInteger m)
@@ -92,5 +114,16 @@ public class PaillierOpt {
         end = System.nanoTime();
         System.out.println("PaillierOpt Decryption:"+ (end-start)/1000000.0);
         System.out.println(d);
+
+        BigInteger m_2 = BigInteger.valueOf(10);
+        BigInteger c_2 = PO.PlainAdd(m_2,c);
+        System.out.println(PO.Decrypt(c_2));
+
+        BigInteger c_3 = PO.CipherAdd(c,c_2);
+        System.out.println(PO.Decrypt(c_3));
+
+        BigInteger c_4 = PO.PlainMul(m_2,c_3);
+        System.out.println(PO.Decrypt(c_4));
+
     }
 }
