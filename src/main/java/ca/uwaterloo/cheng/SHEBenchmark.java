@@ -17,12 +17,10 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 3, time = 1, timeUnit = TimeUnit.SECONDS)
 public class SHEBenchmark {
 
-    int k0 = 1024;
-    int k1 = 160;
-    int k2 = 70;
-    int level = 72;
-    int kappa = SymmetricHomomorphism.KappaSize(k1,k2,level);
-    SymmetricHomomorphism SHE = new SymmetricHomomorphism(k0, k1, k2, kappa);
+    int k0 = 450;
+    int k1 = 100;
+    int k2 = 80;
+    SymmetricHomomorphism SHE = new SymmetricHomomorphism(k0, k1, k2);
     public BigInteger plain_input = BigInteger.valueOf(100);
     private BigInteger enc_input = BigInteger.valueOf(-100);
 
